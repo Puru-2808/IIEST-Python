@@ -1,7 +1,7 @@
 xx=[]
 yy=[]
 
-file1=open("input_data.dat","r")
+file1=open("least_square_input_data.dat","r")
 
 for linei in file1:
     temp1=linei.split()
