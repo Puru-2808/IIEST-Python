@@ -1,7 +1,7 @@
 import math
 
 w0=4.0
-b=1.0
+b=0.75
 
 def f(t,x,u):                  # d2y/dx2
     return -2*b*u - w0**2*x    # u=dy/dx
