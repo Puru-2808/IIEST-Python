@@ -19,7 +19,7 @@ file1.close()
 
 for k in range(0,n):
     if a[k][k]==0:
-        a[k][k]=0.000001
+        a[k][k]=0.000001        # for avoiding zero division error
     for i in range(k+1,n):
         m=a[i][k]/a[k][k]
         b[i]=b[i]-(a[i][k]/a[k][k])*b[k]
@@ -38,8 +38,8 @@ for i in range(n-2,-1,-1):
 
 for i in range(n):
     print(x[i])
-print(2*x[1]+1*x[2]+3*x[3])
-print(1*x[0]+1*x[1]-1*x[2]+2*x[3])
-print(2*x[0]-1*x[1]+3*x[2]+1*x[3])
-print(1*x[0]+2*x[1]+1*x[2]+1*x[3])
+print(1*x[0]+1*x[1]+5*x[2]+2*x[3])
+print(7*x[0]-2*x[1]+1*x[2]+1*x[3])
+print(3*x[0]-2*x[1]+4*x[2]-1*x[3])
+print(-1*x[0]-1*x[1]-1*x[2]+9*x[3])
 
