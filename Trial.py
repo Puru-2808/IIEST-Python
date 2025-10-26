@@ -1,4 +1,4 @@
-import random
+'''import random
 
 a=random.random()
 
@@ -80,5 +80,20 @@ for i in range(2,n-1,2):
     s1+=2*yy[i]
 c+=s+s1
 integral=h*c/3
-print(integral)
+print(integral)'''
 
+import random
+N=2*365*24*60*60
+c=0
+c1=0
+for i in range(N):
+    x=random.choice(["yes","No"])
+    if x=="yes":
+        c+=1
+    else:
+        c1+=1
+
+if c>c1:
+    print("You'll get her ")
+else:
+    print("You'll never get her ")
