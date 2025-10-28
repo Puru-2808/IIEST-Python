@@ -13,7 +13,7 @@ print(c)
 N=1000000
 count=0
 for i in range(N):
-    x=random.random()
+    x=random.random()   
     y=random.random() 
     if x**2+y**2<=1:
         count+=1
@@ -87,13 +87,13 @@ N=2*365*24*60*60
 c=0
 c1=0
 for i in range(N):
-    x=random.choice(["yes","No"])
-    if x=="yes":
+    x=random.choice(["No","Yes"])
+    if x=="No":
         c+=1
     else:
         c1+=1
 
-if c>c1:
+if c<c1:
     print("You'll get her ")
 else:
     print("You'll never get her ")
