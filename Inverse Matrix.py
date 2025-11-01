@@ -31,6 +31,14 @@ for ii in range(n):
 
     # Applying Gaussian Elimination n times
     for k in range(n):
+        if a[k][k]==0:
+            for j in range(n):
+                t=a[k][j]
+                a[k][j]=a[k+1][j]   # Swapping rows to avoid zero pivot element
+                a[k+1][j]=t
+            tb=b[k]
+            b[k]=b[k+1]
+            b[k+1]=tb
         for i in range(k+1,n):
             m=a[i][k]/a[k][k]
             b[i][ii]=b[i][ii]-m*b[k][ii]
