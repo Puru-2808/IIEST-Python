@@ -34,7 +34,7 @@ for ii in range(n):
         if a[k][k]==0:
             for j in range(n):
                 t=a[k][j]
-                a[k][j]=a[k+1][j]   # Swapping rows to avoid zero pivot element
+                a[k][j]=a[k+1][j]   # Swapping rows to avoid zero pivot element 
                 a[k+1][j]=t
             tb=b[k]
             b[k]=b[k+1]
