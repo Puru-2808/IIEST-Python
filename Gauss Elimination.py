@@ -1,6 +1,6 @@
 import numpy as np
 
-n=4
+n=3
 a=np.zeros((n,n),dtype=float)
 x=np.zeros(n,dtype=float)
 b=np.zeros(n,dtype=float)
@@ -19,7 +19,13 @@ file1.close()
 
 for k in range(0,n):
     if a[k][k]==0:
-        a[k][k]=0.000001        # for avoiding zero division error
+        for j in range(n):
+            ta=a[k][j]
+            a[k][j]=a[k+1][j]    # Swapping rows to avoid zero pivot element
+            a[k+1][j]=ta
+        tb=b[k]
+        b[k]=b[k+1]
+        b[k+1]=tb
     for i in range(k+1,n):
         m=a[i][k]/a[k][k]
         b[i]=b[i]-(a[i][k]/a[k][k])*b[k]
@@ -38,8 +44,7 @@ for i in range(n-2,-1,-1):
 
 for i in range(n):
     print(x[i])
-print(1*x[0]+1*x[1]+5*x[2]+2*x[3])
-print(7*x[0]-2*x[1]+1*x[2]+1*x[3])
-print(3*x[0]-2*x[1]+4*x[2]-1*x[3])
-print(-1*x[0]-1*x[1]-1*x[2]+9*x[3])
+print(0*x[0]+2*x[1]+3*x[2])
+print(4*x[0]+5*x[1]+6*x[2])
+print(7*x[0]+8*x[1]+9*x[2])
 
