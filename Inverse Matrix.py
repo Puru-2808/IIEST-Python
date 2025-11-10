@@ -1,6 +1,6 @@
 import numpy as np
 
-n=5
+n=6  # Order of Matrix
 
 a=np.zeros((n,n),dtype=float) # Original Matrix
 a0=np.zeros((n,n),dtype=float) # Copy of Original Matrix
@@ -21,16 +21,15 @@ for linei in file1:
     i+=1
 file1.close()
 
-if np.linalg.det(a)<=0.00001:
+if np.linalg.det(a)<=0.000000000001:
     print("Matrix is Singular, Inverse cannot be found")
     exit()
 else:
-   a0=a
+   a0=a.copy()
     
    for ii in range(n):
         
-        a=a0
-
+        a=a0.copy()
         # Identity Matrix
         for i in range(n):
            for j in range(n):
@@ -38,7 +37,6 @@ else:
                 b[i][j]=1.0
               else:
                 b[i][j]=0.0
-        file1.close()
 
         # Applying Gaussian Elimination n times
         for k in range(n):
@@ -64,9 +62,9 @@ else:
         for i in range(n):
           xx[i][ii]=x[i]
 
-        for i in range(n):
-           for j in range(n):
-              file2.write(str(xx[i][j])+" ")
-        file2.write("\n")
+   for i in range(n):
+      for j in range(n):
+         file2.write(str(xx[i][j])+" ")
+      file2.write("\n")
 
    file2.close()
