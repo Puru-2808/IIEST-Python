@@ -96,7 +96,7 @@ for i in range(N):
 if c<c1:
     print("You'll get her ")
 else:
-    print("You'll never get her ")'''
+    print("You'll never get her ")
 
 import numpy as np
 
@@ -141,4 +141,4 @@ for i in range(n-2,-1,-1):
     x[i]=(b[i]-sum)/a[i][i]
 
 for i in range(n):
-    print(x[i])
+    print(x[i])'''
