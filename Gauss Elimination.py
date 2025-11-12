@@ -32,9 +32,6 @@ for k in range(0,n):
         for j in range(k,n):
             a[i][j]=a[i][j]-m*a[k][j]
 
-for i in range(n):
-    print(a[i])
-
 x[n-1]=b[n-1]/a[n-1][n-1]
 for i in range(n-2,-1,-1):
     sum=0
@@ -43,8 +40,4 @@ for i in range(n-2,-1,-1):
     x[i]=(b[i]-sum)/a[i][i]
 
 for i in range(n):
-    print(x[i])
-print(0*x[0]+2*x[1]+3*x[2])
-print(4*x[0]+5*x[1]+6*x[2])
-print(7*x[0]+8*x[1]+9*x[2])
-
+    print("x[",i,"]=" ,x[i])
