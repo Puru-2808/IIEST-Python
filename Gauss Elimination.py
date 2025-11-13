@@ -1,6 +1,6 @@
 import numpy as np
 
-n=3
+n=5
 a=np.zeros((n,n),dtype=float)
 x=np.zeros(n,dtype=float)
 b=np.zeros(n,dtype=float)
@@ -41,3 +41,6 @@ for i in range(n-2,-1,-1):
 
 for i in range(n):
     print("x[",i,"]=" ,x[i])
+
+print(2*x[0]+3*x[1]-x[2]+4*x[3]+x[4])
+print(x[0]-2*x[1]+3*x[2]+x[3]-2*x[4])
