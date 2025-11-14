@@ -6,7 +6,7 @@ b=1
 def f(t,x,u):                  # d2y/dx2
     return -2*b*u - w0**2*x    # u=dy/dx
 
-n=10000
+n=10001
 
 t=[0.0]*(n+2)
 x=[0.0]*(n+2)
