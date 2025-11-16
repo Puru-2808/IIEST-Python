@@ -106,3 +106,51 @@ else:
             xx[i][ii]=(b[i]-sum)/a[i][i]
 
 print(xx)
+
+# iv)
+def f(x,y):
+    return 5*x-3*y     # dx/dt
+def f1(x,y):
+    return -6*x+2*y    # dy/dt
+
+n=1000
+t=[0.0]*(n+2)
+x=[0.0]*(n+2)
+y=[0.0]*(n+2)
+
+ti=0
+tf=1
+h=(tf-ti)/n
+
+t[0]=0
+x[0]=15
+y[0]=0
+
+file=open("RK4_coupled.dat","w")
+file1=open("RK4_coupled1.dat","w")
+
+for i in range(n):
+    k1x=f(x[i],y[i])
+    k1y=f1(x[i],y[i])
+
+    k2x=f(x[i]+h/2,y[i]+k1x*h/2)
+    k2y=f1(x[i]+h/2,y[i]+k1y*h/2)
+
+    k3x=f(x[i]+h/2,y[i]+k2x*h/2)
+    k3y=f1(x[i]+h/2,y[i]+k2y*h/2)
+
+    k4x=f(x[i]+h,y[i]+k3x*h)
+    k4y=f1(x[i]+h,y[i]+k3y*h)
+
+    kx=(k1x+2*k2x+2*k3x+k4x)/6
+    ky=(k1y+2*k2y+2*k3y+k4y)/6
+
+    t[i+1]=t[i]+h
+    x[i+1]=x[i]+h*kx
+    y[i+1]=y[i]+h*ky
+
+    file.write(str(t[i])+" "+str(x[i])+"\n")
+    file1.write(str(t[i])+" "+str(y[i])+"\n")
+
+file.close()
+file1.close()
