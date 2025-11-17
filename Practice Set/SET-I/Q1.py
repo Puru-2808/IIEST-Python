@@ -6,16 +6,8 @@ def f(t,x,u):
 
 m=1.0
 b=0.1
-b1=2*b
 k=1.0
-w0=(k/m)**0.5
-y=b1/(2*m)
-w=(w0**2-y**2)**0.5
-
-if y<w0:                 # Under damped (Osscillation)
-    T=2*math.pi/w
-else:                    # No oscillation
-    T=2*math.pi/w0
+T=2*math.pi/w0
 
 n=1000
 t=[0.0]*(n+2)
