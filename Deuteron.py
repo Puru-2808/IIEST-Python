@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-a=2.1
+a=2.0
 E=-2.24
 m=938.91
 hc=197.33
@@ -31,7 +31,6 @@ diff = np.array(yy1) - np.array(yy2)
 for i in range(len(diff)-1):
     if diff[i] * diff[i+1] < 0:
         if abs(diff[i]-diff[i+1])<10:
-            vcross = zz[i] - diff[i] * (zz[i+1] - zz[i]) / (diff[i+1] - diff[i])
             print("Intersection v =",vv[i],"MeV")
 
 plt.plot(vv,yy1)
