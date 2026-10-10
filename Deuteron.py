@@ -30,8 +30,8 @@ diff = np.array(yy1) - np.array(yy2)
 
 for i in range(len(diff)-1):
     if diff[i] * diff[i+1] < 0:
-        if abs(diff[i]-diff[i+1])<10:
-            print("Intersection v =",vv[i],"MeV")
+        print(1/np.tan(zz[i]))
+        print("Intersection v =",vv[i],"MeV")
 
 plt.plot(vv,yy1)
 plt.plot(vv,yy2)
